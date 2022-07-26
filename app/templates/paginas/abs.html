@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    ESTADISTICAS
+{% endblock %}
+
+{% block content %}
+<div class="labelCentrado "><h1>Analisis de Similitud</h1></div>
+<div class="center"><h1>{{tituloAbst.titulo}}</h1></div>
+<div class="conabs"> 
+    <div class="tituloA">
+        <h2>Abstract Original</h2>
+        <h2>Abstract Generado con GPT3</h2>
+    </div>
+    <div class="div1">        
+        <div class="tex1">            
+            <p>{{abst.abst}}
+            </p>
+        </div>
+        
+        <div class="tex2">            
+            <p>{{absG.absg}}
+                
+            </p>
+        </div>
+    </div>
+   <div class="div2">
+        <div class="puntosJ"><h1>Jaccard {{similitud.jaccard}}</h1></div>
+        <div class="puntosC"><h1>Coseno {{similitud.cosenoV}}</h1></div>
+   </div>
+</div>
+
+{% endblock %}

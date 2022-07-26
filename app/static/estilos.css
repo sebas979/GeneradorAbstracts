@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+/* Default styles for the browser */
+body {
+  margin:0%;
+  background-image: url(/static/fondo3.jpg);
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: center center;
+  
+}
+/*FONDO ANIMADO*/
+
+
+/*fin fondo animado*/ 
+/**CABECERA*/  
+header{
+    width: 100%;
+    height: 100%;
+    background: rgba(90, 90, 90, 0.7);
+    font-family: 'Poppins';
+}
+
+
+.logo{
+    display: flex;   
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo div{
+    padding-right: 2%;
+}
+
+
+.logo .button{    
+    background-color: #1ab26b; /* This HEX is the color of the button */
+    color: #FFF;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+
+}
+
+.logo .button:hover{
+    filter: brightness(1.32);
+    padding: 12px 22px;
+    color: rgb(0, 0, 0);
+}
+
+.logo .button:visited{
+  background-color: #99c71c;
+  filter: brightness(1.05);
+}
+/**FIN CABECERA*/  
+/*Centrar elementos*/
+.eleBusqueda{
+    background-color:rgba(1, 22, 39, 0.3);    
+    /*border: 2px solid rgb(248, 237, 187);    */
+    /*max-width: 1000px;
+    max-height: 1000px;*/
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+/*CAJA DE BUSQUEDA*/
+
+  .select1 input[type=search] {
+    border: solid 3px #fff;
+    width: 600px;    
+    box-sizing: border-box;
+    outline: solid #fc0 0;
+    padding: 0.9em;
+    transition: all 1s ease-in;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;     
+  }
+
+  .select1 input[type=search]:focus {
+    border: solid 1px #09f;
+    outline: solid #fc0 2px;
+    width: 700px;
+    border-radius: 10rem;
+  }
+
+/***************2******************/
+  textarea {
+    border: none 3px #fff;
+    height: 60px;
+    width: 600px;
+    box-sizing: border-box;
+    transition: all 1s ease-in;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    
+  }
+
+ textarea:focus {
+    border: solid 1px #09f;
+    outline: solid #fc0 2px;
+    width: 800px;
+    height: 80px;
+/*    border-radius: 10rem;*/
+  }
+
+/*Distancias entre elementos de busqueda*/
+.select1{
+    padding: 3% 0px 0% 0%;
+}
+
+.select1 label{
+    padding: 0% 5% 0% 0%;
+}
+
+.select2{
+  padding: 5% 0px 5% 0%;
+}
+
+.select2 label{
+    padding: 0% 3% 0% 0%;    
+}
+
+/*Footer flotante*/ 
+
+
+  footer{
+    position: fixed;
+    right: 95%;
+    top: 49%;
+    /*align-self: flex-start;*/
+    /*float: inline-start;*/
+
+  }
+#btn-mas{
+    display: none;
+}
+.redes a, .btn-mas label{
+    
+    display: block;
+    text-decoration: none;
+    background: #7163f8;
+    color: rgb(255, 255, 255);
+    width: 55px;
+    height: 55px;
+    /*line-height: 55px;*/
+    text-align: center;
+    border-radius: 50%;
+    /*box-shadow: 0px 1px 10px rgba(0,0,0,0.4);*/
+    transition: all 500ms ease;
+}
+.redes a:hover{
+    background: #fff;
+    color: #cce463;   
+}
+
+.redes a{
+    font-family: 'Mochiy Pop One', sans-serif;
+    /*margin-bottom: 10px;*/
+    opacity: 0;
+    visibility: hidden;   
+    font-size: 26px; 
+}
+.us1{
+  text-align: center;
+}
+.us2 img{
+  padding: 0% 0% 0% 0%;
+}
+#btn-mas:checked~ .redes a{    
+    margin-bottom: 10px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.btn-mas label{
+    cursor: pointer;
+    background: #ff9494;    
+    font-size: 45px;
+    margin-left: 0%;
+}
+#btn-mas:checked ~ .btn-mas label{
+    transform: rotate(360deg);
+    font-size: 25px;
+    
+}
+
+/*estilos abs*/
+.conabs{  
+  padding: 1% 0% 5% 0%;
+  margin: 0%;
+  display: flex; 
+  flex-direction: column;   
+  
+  background-color:rgba(255,255,255,0.5);
+  text-align: center;
+}
+
+.div1{
+  display: flex;  
+  justify-content: center;
+  border-color: #ff0606;
+  
+}
+.tituloA{
+  display: flex;  
+  justify-content: space-around;
+}
+
+
+.tex1{
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 0% 3% 0% 3%;
+  text-align: justify;
+  background-color:rgba(1, 22, 39, 0.3);    
+  width:auto;   
+  height: auto;
+  min-width: 40%;
+}
+
+.tex1 h2{
+  text-align: center;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 20px;  
+}
+
+.tex2{
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 0% 3% 0% 3%;
+  text-align: justify;
+  background-color:rgba(231,29,54, 0.3);
+  width:auto;
+  height:auto;
+  min-width: 40%;
+
+}
+.tex2 h2{
+  text-align: center;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 20px;
+}
+
+.div2{
+
+  margin-top: 1%;
+  margin-left: 37%;
+  margin-right: 38%;
+  display: flex;
+  justify-content: space-around;
+  border-color: #ff0606;
+  
+}
+
+.puntosJ{  
+  background-color:rgba(46, 196, 182, 0.5);  
+  width: auto;
+  height: auto;
+  padding: 0% 3% 0% 3%;
+}
+.puntosJ h1{  
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 20px;
+}
+
+.puntosC{  
+  background-color:rgba(46, 196, 182, 0.5);
+  width: auto;
+  height: auto;
+  padding: 0% 3% 0% 3%;
+}
+.puntosC h1{  
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 20px;
+}
+
+/*Tabla*/
+
+.eleBusqueda .scrollDiv{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+table {   
+  width: 100%; 
+  border-collapse: collapse; 
+  
+  
+/*  margin-top: 5%;
+  margin-bottom: 5%;*/
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+}
