@@ -82,14 +82,6 @@ def recuperarDatosHTML(enlace,etiqueta):
         tit.append(p.get_text())
     return tit
 
-def exportarCSV(nombre_file,coleccion):
-    dic = {'coleccion': coleccion} 
-    df = pd.DataFrame(dic) 
-    df.to_csv(nombre_file,index=False,encoding='utf-8')
-
-def importarCSV(nombre_file):
-    return pd.read_csv(nombre_file)
-
 def imprimirFII(vecT,vecO):
     print('Full Inverted Index')
     for j in range (len(vecT)):

@@ -6,7 +6,7 @@ import numpy as np
 def jaccard(a,b):
     intersec = len(np.intersect1d(a,b))   
     uni = len(np.union1d(a,b)) 
-    return round(intersec/uni,2)
+    return round(intersec/uni,7)
 
 def matrizJaccard(coleccion):
     matriz = np.zeros((len(coleccion),len(coleccion)))

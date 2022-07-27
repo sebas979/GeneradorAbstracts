@@ -5,122 +5,22 @@
 {% endblock %}
 
 {% block content %}
+    <div class="labelCentrado "><h1>Resultados de Experimentación</h1></div>
     <div  class="eleBusqueda">  
         <div class="scrollDiv">
         <table>
             <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Job Title</th>
-                <th>Favorite Color</th>
-               
+                <th>Paper</th>
+                <th>Jaccard</th>
+                <th>Coseno Vectorial</th>
             </tr>
+            {% for elemento in tabla %}
             <tr>
-                <td>James</td>
-                <td>Matman</td>
-                <td>Chief Sandwich Eater</td>
-                <td>Lettuce Green</td>
+              <td>{{elemento.0}}</td>
+              <td>{{elemento.1}}</td>
+              <td>{{elemento.2}}</td>
             </tr>
-            <tr>
-              <td>The</td>
-              <td>Tick</td>
-              <td>July 19, 1968</td>
-              <td>Edlund, Ben (July 1996).</td>
-            </tr>
-            
-            <tr>
-              <td>Captain</td>
-              <td>Cool</td>
-              <td>Tree Crusher</td>
-              <td>Blue</td>
-            </tr>
-
-            <tr>
-                <td>James</td>
-                <td>Matman</td>
-                <td>Chief Sandwich Eater</td>
-                <td>Lettuce Green</td>
-            </tr>
-            <tr>
-              <td>The</td>
-              <td>Tick</td>
-              <td>July 19, 1968</td>
-              <td>Edlund, Ben (July 1996).</td>
-            </tr>
-
-            <tr>
-                <td>James</td>
-                <td>Matman</td>
-                <td>Chief Sandwich Eater</td>
-                <td>Lettuce Green</td>
-            </tr>
-            <tr>
-              <td>The</td>
-              <td>Tick</td>
-              <td>July 19, 1968</td>
-              <td>Edlund, Ben (July 1996).</td>
-            </tr>
-
-            <tr>
-                <td>James</td>
-                <td>Matman</td>
-                <td>Chief Sandwich Eater</td>
-                <td>Lettuce Green</td>
-            </tr>
-            <tr>
-              <td>The</td>
-              <td>Tick</td>
-              <td>July 19, 1968</td>
-              <td>Edlund, Ben (July 1996).</td>
-            </tr>
-            <tr>
-                <td>James</td>
-                <td>Matman</td>
-                <td>Chief Sandwich Eater</td>
-                <td>Lettuce Green</td>
-            </tr>
-            <tr>
-              <td>The</td>
-              <td>Tick</td>
-              <td>July 19, 1968</td>
-              <td>Edlund, Ben (July 1996).</td>
-            </tr>
-            <tr>
-                <td>James</td>
-                <td>Matman</td>
-                <td>Chief Sandwich Eater</td>
-                <td>Lettuce Green</td>
-            </tr>
-            <tr>
-              <td>The</td>
-              <td>Tick</td>
-              <td>July 19, 1968</td>
-              <td>Edlund, Ben (July 1996).</td>
-            </tr>
-            <tr>
-                <td>James</td>
-                <td>Matman</td>
-                <td>Chief Sandwich Eater</td>
-                <td>Lettuce Green</td>
-            </tr>
-            <tr>
-              <td>The</td>
-              <td>Tick</td>
-              <td>July 19, 1968</td>
-              <td>Edlund, Ben (July 1996).</td>
-            </tr>
-            <tr>
-                <td>James</td>
-                <td>Matman</td>
-                <td>Chief Sandwich Eater</td>
-                <td>Lettuce Green</td>
-            </tr>
-            <tr>
-              <td>The</td>
-              <td>Tick</td>
-              <td>July 19, 1968</td>
-              <td>Edlund, Ben (July 1996).</td>
-            </tr>       
+            {% endfor %}
         </table>
     </div> 
     </div>

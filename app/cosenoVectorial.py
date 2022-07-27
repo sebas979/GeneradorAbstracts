@@ -13,7 +13,7 @@ def matrizDistacias(transpuesta):
     i = j = 0
     while True:
         if matrizD[i][j] == 0:
-            matrizD[i][j] = matrizD[j][i] = round(np.dot(transpuesta[i],transpuesta[j]),2)
+            matrizD[i][j] = matrizD[j][i] = round(np.dot(transpuesta[i],transpuesta[j]),7)
         j += 1
         if j == len(transpuesta):
             j = 0
