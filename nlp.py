@@ -14,7 +14,8 @@ def limpiarDocumento (cole,idioma):
     colecciontok=[]
     for documento in cole:
         documentoaux = documento.lower().replace('á','a').replace('é','e').replace('í','i').replace('ó','o').replace('ú','u')
-        documentoaux = re.sub('[^A-Za-z0-9]+',' ', documentoaux)#eliminar caracteres especiales  
+        documentoaux = re.sub('[^A-Za-z0-9]+',' ', documentoaux)#eliminar caracteres especiales    
+        documentoaux = documentoaux.lower()# poner todo en minúsculas
         documentoaux = documentoaux.split()# tokenización
         documentoaux = quitarStopwords(idioma,documentoaux)# quitar stopwords
         documentoaux = stemming(documentoaux)# stemming
@@ -88,6 +89,14 @@ def recuperarDatosHTML(enlace,etiqueta):
     for p in soup.find_all(etiqueta):
         tit.append(p.get_text())
     return tit
+
+def exportarCSV(nombre_file,coleccion):
+    dic = {'coleccion': coleccion} 
+    df = pd.DataFrame(dic) 
+    df.to_csv(nombre_file,index=False,encoding='utf-8')
+
+def importarCSV(nombre_file):
+    return pd.read_csv(nombre_file)
 
 def imprimirFII(vecT,vecO):
     print('Full Inverted Index')
