@@ -7,6 +7,8 @@ from . import nlp
 from . import tdIdf as tdf
 from . import jaccard
 from werkzeug.utils import redirect
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 bp = Blueprint('proyecto',__name__,url_prefix='/')
 
@@ -23,7 +25,6 @@ def tabla():
 
 @bp.route('/formulario', methods=['GET','POST'])
 def formulario():
-#    datosfiltrados = datos
     if request.method == 'POST':        
         titulo = request.form.get('tituloAbs')
         abstract = request.form.get('absOrg')
@@ -55,16 +56,7 @@ def calculoMetricas (col):
     jacValue = jaccard.jaccard(colLim[0],colLim[1])
 
     #Metrica Coseno Vectorial
-    diccionario={'tokens':[],'ocurrencias':[]}
-    diccionario['tokens']= nlp.indexacionToken(colLim)
-    diccionario['ocurrencias'] = nlp.ocurrencias(diccionario['tokens'],colLim)
-    #TF-IDF
-    matriz = tdf.bagWords(diccionario,colLim)
-    wtf = tdf.matrizPTF(matriz)
-    dF = tdf.documentF(wtf)
-    idf = tdf.IDF(dF,len(colLim))
-    tf_idf = tdf.TFIDF(wtf,idf)
-    #Coseno Vectorial
-    matrizN = cosV.matrizNormal(tf_idf)
-    matrizAbs = cosV.matrizDistacias(matrizN)
-    return jacValue,matrizAbs[0][1]
+    colLim = nlp.unirTokens(colLim)
+    tfidf = TfidfVectorizer().fit_transform(colLim)
+    cosV = cosine_similarity(tfidf[0:1],tfidf[1:2]).flatten()
+    return jacValue,round(cosV[0],7)

@@ -13,8 +13,8 @@ from nltk.stem.porter import PorterStemmer
 def limpiarDocumento (cole,idioma):    
     colecciontok=[]
     for documento in cole:
-        documentoaux = re.sub('[^A-Za-z0-9]+',' ', documento)#eliminar caracteres especiales    
-        documentoaux = documentoaux.lower()# poner todo en minúsculas
+        documentoaux = documento.lower().replace('á','a').replace('é','e').replace('í','i').replace('ó','o').replace('ú','u')
+        documentoaux = re.sub('[^A-Za-z0-9]+',' ', documentoaux)#eliminar caracteres especiales  
         documentoaux = documentoaux.split()# tokenización
         documentoaux = quitarStopwords(idioma,documentoaux)# quitar stopwords
         documentoaux = stemming(documentoaux)# stemming
@@ -38,6 +38,13 @@ def stemming(documento):
     for token in documento:
         documentoS.append(stemmer.stem(token))
     return documentoS
+
+def unirTokens(col):
+    docUni = []
+    for documento in col:
+        doc = ' '.join(documento)
+        docUni.append(doc)
+    return docUni
 
 def indexacionToken(coleccion):
     palabras=[]    
